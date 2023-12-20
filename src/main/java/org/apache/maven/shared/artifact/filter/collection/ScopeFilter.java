@@ -68,7 +68,9 @@ public class ScopeFilter
         {
             if ( !Artifact.SCOPE_COMPILE.equals( includeScope ) && !Artifact.SCOPE_TEST.equals( includeScope )
                 && !Artifact.SCOPE_PROVIDED.equals( includeScope ) && !Artifact.SCOPE_RUNTIME.equals( includeScope )
-                && !Artifact.SCOPE_SYSTEM.equals( includeScope ) )
+                && !Artifact.SCOPE_SYSTEM.equals( includeScope )
+                && !Artifact.SCOPE_COMPILE_PLUS_RUNTIME.equals( includeScope )
+                && !Artifact.SCOPE_RUNTIME_PLUS_SYSTEM.equals( includeScope ) )
             {
                 throw new ArtifactFilterException( "Invalid Scope in includeScope: " + includeScope );
             }
@@ -96,7 +98,9 @@ public class ScopeFilter
         {
             if ( !Artifact.SCOPE_COMPILE.equals( excludeScope ) && !Artifact.SCOPE_TEST.equals( excludeScope )
                 && !Artifact.SCOPE_PROVIDED.equals( excludeScope ) && !Artifact.SCOPE_RUNTIME.equals( excludeScope )
-                && !Artifact.SCOPE_SYSTEM.equals( excludeScope ) )
+                && !Artifact.SCOPE_SYSTEM.equals( excludeScope )
+                && !Artifact.SCOPE_COMPILE_PLUS_RUNTIME.equals( excludeScope )
+                && !Artifact.SCOPE_RUNTIME_PLUS_SYSTEM.equals( excludeScope ) )
             {
                 throw new ArtifactFilterException( "Invalid Scope in excludeScope: " + excludeScope );
             }

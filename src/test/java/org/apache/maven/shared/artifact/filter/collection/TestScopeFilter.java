@@ -116,6 +116,27 @@ public class TestScopeFilter
     }
 
     @Test
+    public void testScopeCompileAndRuntime()
+            throws ArtifactFilterException
+    {
+        ScopeFilter filter = new ScopeFilter( Artifact.SCOPE_COMPILE_PLUS_RUNTIME, null );
+        Set<Artifact> result = filter.filter( artifacts );
+        assertEquals( 4, result.size() );
+
+    }
+
+    @Test
+    public void testScopeRuntimeAndSystem()
+            throws ArtifactFilterException
+    {
+        ScopeFilter filter = new ScopeFilter( Artifact.SCOPE_RUNTIME_PLUS_SYSTEM, null );
+        Set<Artifact> result = filter.filter( artifacts );
+        assertEquals( 3, result.size() );
+
+    }
+
+
+    @Test
     public void testExcludeProvided()
         throws ArtifactFilterException
     {
